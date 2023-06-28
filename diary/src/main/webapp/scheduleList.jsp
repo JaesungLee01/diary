@@ -143,14 +143,21 @@
 						</div>
 						<div> <!-- 일정 memo(5글자만 -->
 							<%
+							boolean hasSchedule = false;
 								for(Schedule s : scheduleList){
 									if(num == Integer.parseInt(s.scheduleDate)){
+										hasSchedule = true;
 							%>
 									<div style="color:<%=s.scheduleColor%>"><%=s.scheduleMemo %></div>
 							<%
 									}
 								}
+								 if (!hasSchedule) {
 							%>
+				              <div>&nbsp;</div>
+				        <%
+				          }
+				        %>
 						</div>
 						</td>
 			<%
